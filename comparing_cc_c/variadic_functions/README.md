@@ -101,7 +101,7 @@ C++ variadic funcion templates vs C variadics function
 - C++ is epically faster using constants (known at compilation time)
 - C++ was epically faster using non-volatile variables
 - C++ was still epically faster using volatile variables
-- C++ is faster if value is unknown at compilation time
+- C++ is faster even if the value changes in each 'for' loop
 
 C++ Wins !!!
 
