@@ -84,6 +84,17 @@ Prints
     
 #######################################################################
 
+The map, filter and reduce function do not come standardized in Modern C++.
+
+The magic is done by few line of C++ template.
+The source code for this magic is here [higherorder.hh](https://github.com/Dragdex/giganticpp/blob/master/comparing_python_cc/lambda_filter_map_reduce/higherorder.hh)
+
+Of course you can copy/paste it and and use.
+Disclaimer: It has been written for C++17, and may need adjustments for previous versions.
+    
+#######################################################################
+
+To Do: implement Filter and Reduction
 To Do: copy/paste python code for side-by-side comparison
 To Do: performance comparison
 To Do: conclusion
