@@ -1,5 +1,5 @@
 #include <vector>
-#include <queue>
+#include <deque>
 #include <array>
 #include <string>
 #include <iostream>
@@ -14,9 +14,9 @@ int main(int , char **) {
     vector<int> v1 = {  10,  11,  12,  13,  14,  15};  // a vector
     vector<int> v2 = {1000,1100,1200,1300,1400,1500};  // a vector
 
-    auto v3 = mapf()([](int x, int y) -> int { return x + y; }, v1, v2);
+    auto r1 = mapf([](int x, int y) -> int { return x + y; }, v1, v2);
     
-    for (auto v : v3) {
+    for (auto v : r1) {
         cout << v << ", ";
     }
     cout << endl;
@@ -26,22 +26,32 @@ int main(int , char **) {
     vector<int> v4 = {1000,1100,1200,1300,1400,1500};  // a vector
 
     // wow! we are mapping diferent types (vector and initializer list)
-    auto i3 = mapf()([](auto x, auto y, auto z) { return x + y + z; }, i1, i2, v4);
+    auto r2 = mapf([](auto x, auto y, auto z) { return x + y + z; }, i1, i2, v4);
     
-    for (auto v : i3) {
+    for (auto v : r2) {
         cout << v << ", ";
     }
     cout << endl;
 
-    array<string, 3> s1 = {"a"s, "b"s, "c"s};
-    queue<string> q1;
-    q1.push("A"s);
-    q1.push("B"s);
-    q1.push("C"s);
+    // mix different types
+    array<string, 3> as1 = {"a"s, "b"s, "c"s};
+    deque<string> q1 = { "A"s, "B"s, "C"s};
 
-  ///  auto a5 = mapf()([](auto x, auto y) { return x + y; }, s1, q1);
+    auto r3 = mapf([](auto x, auto y) { return x + y; }, as1, q1);
 
+    for (auto v : r3) {
+        cout << v << ", ";
+    }
+    cout << endl;
 
+    // map std::strings
+    string s1("edgard"s);
+    string s2("Lima"s);
+    string s3("gmail"s);
+
+    auto r4 = mapf<string, string>([](auto x, auto y, auto z) { return x <= y ? x <= z ? x : z : y <= z ? y : z; }, s1, s2, s3);
+
+    cout << r4 << endl;
 
     return 0;
 }
