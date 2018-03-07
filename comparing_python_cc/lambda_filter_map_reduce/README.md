@@ -95,8 +95,11 @@ Disclaimer: It has been written for C++17, and may need adjustments for previous
 #######################################################################
 
 To Do: implement Filter and Reduction
+
 To Do: copy/paste python code for side-by-side comparison
+
 To Do: performance comparison
+
 To Do: conclusion
 
 #######################################################################
