@@ -35,9 +35,9 @@ int main(int , char **) {
 
     // mix different types
     array<string, 3> as1 = {"a"s, "b"s, "c"s};
-    deque<string> q1 = { "A"s, "B"s, "C"s};
+    deque<int> q1 = {1,2,3};
 
-    auto r3 = mapf([](auto x, auto y) { return x + y; }, as1, q1);
+    auto r3 = mapf([](auto x, auto y) { return x + to_string(y); }, as1, q1);
 
     for (auto v : r3) {
         cout << v << ", ";
@@ -49,7 +49,7 @@ int main(int , char **) {
     string s2("Lima"s);
     string s3("gmail"s);
 
-    auto r4 = mapf<string, string>([](auto x, auto y, auto z) { return x <= y ? x <= z ? x : z : y <= z ? y : z; }, s1, s2, s3);
+    auto r4 = mapf<string, string>([](auto x, auto y, auto z) { return min(min(x,y),min(x,z)); }, s1, s2, s3);
 
     cout << r4 << endl;
 
