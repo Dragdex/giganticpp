@@ -84,6 +84,8 @@ output:
     
 #######################################################################
 
+The code snippet was extracted from [main.cc](https://github.com/Dragdex/giganticpp/blob/master/comparing_python_cc/lambda_filter_map_reduce/main.cc)
+
 The map, filter and reduce function do not come standardized in Modern C++.
 
 The magic is done by few line of C++ template.
