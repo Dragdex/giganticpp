@@ -1,5 +1,5 @@
 
-This post shows how Modern C++ can be used to program with same convenience as python.
+This post shows how Modern C++ programming can as convenient as python.
 
 See how easy, beautiful and elegant is to work with Lambdas, Map, Reduce and Filter in Modern C++.
 
