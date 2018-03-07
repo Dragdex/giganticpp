@@ -18,7 +18,7 @@ for (auto v : r1) {
 }
 ```
 
-Prints
+output:
 
     1010, 1111, 1212, 1313, 1414, 1515,
 
@@ -40,7 +40,7 @@ for (auto v : r2) {
 }
 ```
 
-Prints
+output:
 
     1011, 1122, 1233,
 
@@ -60,7 +60,7 @@ for (auto v : r3) {
 }
 ```
 
-Prints
+output:
 
     a1, b2, c3,
 
@@ -78,7 +78,7 @@ auto r4 = mapf<string, string>([](auto x, auto y, auto z) { return x <= y ? x <=
 cout << r4 << endl;
 ```
 
-Prints
+output:
 
     Ldaa
     
