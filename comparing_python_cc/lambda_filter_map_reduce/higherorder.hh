@@ -5,6 +5,8 @@
 #include <utility>
 #include <iterator>
 #include <tuple>
+#include <functional>
+#include <type_traits>
 
 #include <vector>
 
@@ -26,13 +28,18 @@ namespace giganticpp {
         }
 
     template <class Tuple, class F, size_t... Is>
-        constexpr auto apply_impl(Tuple t, F f, index_sequence<Is...>) {
-            return f(get<Is>(t)...);
+        constexpr auto apply_impl(Tuple && t, F && f, index_sequence<Is...>) {
+            return invoke(forward<F>(f), get<Is>(forward<Tuple>(t))...);
         }
 
     template <class Tuple, class F>
-        constexpr auto apply(Tuple t, F f) {
+        constexpr auto apply(Tuple & t, F && f) {
             return apply_impl(t, f, make_index_sequence<tuple_size<Tuple>{}>{});
+            return apply_impl(
+                    forward<Tuple>(t),
+                    forward<F>(f),
+                    // make_index_sequence<tuple_size<Tuple>{}>{});
+                   make_index_sequence<tuple_size<decay_t<Tuple>>::value> {});  
         }
 
     template <typename T, typename Rt = vector<typename T::value_type>, typename F, typename... Ts>
@@ -42,7 +49,7 @@ namespace giganticpp {
             r.resize(m);
             for(auto i = 0u; i < m; i++) {
                 auto tuples =  make_tuple(*next(begin(t),i), *next(begin(ts),i)...);
-                auto v = apply<tuple<typename T::value_type, typename Ts::value_type ...>>(tuples, f);
+                auto v = apply<tuple<typename T::value_type, typename Ts::value_type ...>>(tuples, forward<F>(f));
                 *next(begin(r),i) = move(v);
             }    
             return r;
