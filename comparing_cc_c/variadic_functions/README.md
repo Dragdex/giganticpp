@@ -37,9 +37,11 @@ Now let's try to make C++ life harder by using a value from user input
 First compile de code with:
     
     make clean
-    make DEFS=-DINPUT all
+    make DEFS=-DUSE _INPUT all
 
 Now the program asks the user to enter a value that will be used in the sum
+
+    make
 
     Enter an integer 0
     C++ 21000000000 in  0 ms
@@ -54,6 +56,9 @@ The problem with C compiler is because it doesn't know what is coming in VA_ARGS
 
 C++ still did magic setting the varible as volatile.
 
+    make clean
+    make DEFS="-DUSE_VOLATILE -DUSE_INPUT" all
+
 ![alt text](https://github.com/Dragdex/giganticpp/blob/master/comparing_cc_c/variadic_functions/pics/volatile.png)
 
 ############################################
@@ -65,6 +70,9 @@ To not let C++ calculate the value, or multiply it after fisrt calculation, now 
 C++ has a default limit for template depth of 900 but you can change it with "-ftemplate-depth="
 
 First compile de code with:
+
+    make clean
+    make DEFS="-DUSE_RAND" all
 
 (the compilation takes a while)
 
@@ -79,6 +87,12 @@ Now C++ is just a bit faster. as we see the output from "make"
 Both use RAM of 1.4 MB and (output from "make ram"), and have the same executable size ("ls -la compare_c*")
 
 C++ has a bit smaller object size ("ls -la *.o")
+
+    ls -la compare_c*
+    ls -la test*.o
+    ls -la main*.o
+
+![alt text](https://github.com/Dragdex/giganticpp/blob/master/comparing_cc_c/variadic_functions/pics/rand_objsize.png)
 
 As you can see from C++ assembly, it make inline adds()
 
