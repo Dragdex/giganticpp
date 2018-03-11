@@ -49,7 +49,7 @@ namespace giganticpp {
         R ret(R(C::*)(A...));
 
     template <typename Rt = void, typename F, typename T, typename... Ts>
-        auto mapf(F f, const T & t, const Ts & ... ts) {
+        auto mapf(F && f, const T & t, const Ts & ... ts) {
             auto m = minsize(t, ts...);
             using Vt = decltype(std::forward<F>(f)(*begin(t), *begin(ts)...));
             using V = typename std::conditional<is_same<Rt,void>::value, vector<Vt>, Rt>::type;
