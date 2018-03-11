@@ -6,7 +6,7 @@
 #include <cstdlib>
 #else
 #if (LANG != C)
-#error "Expecting compilation for C++"
+#error "Expecting compilation for C"
 #endif
 #include <stdarg.h>
 #include <stdlib.h>
