@@ -10,6 +10,7 @@
 
 #include <vector>
 
+
 namespace giganticpp {
 
     using namespace std;
@@ -34,7 +35,7 @@ namespace giganticpp {
 
     template <class Tuple, class F>
         constexpr auto apply(Tuple & t, F && f) {
-            return apply_impl(t, f, make_index_sequence<tuple_size<Tuple>{}>{});
+            //return apply_impl(t, f, make_index_sequence<tuple_size<Tuple>{}>{});
             return apply_impl(
                     forward<Tuple>(t),
                     forward<F>(f),
@@ -42,10 +43,18 @@ namespace giganticpp {
                    make_index_sequence<tuple_size<decay_t<Tuple>>::value> {});  
         }
 
-    template <typename T, typename Rt = vector<typename T::value_type>, typename F, typename... Ts>
+    template<typename R, typename... A>
+        R ret(R(*)(A...));
+
+    template<typename C, typename R, typename... A>
+        R ret(R(C::*)(A...));
+
+    template <typename Rt = void, typename F, typename T, typename... Ts>
         auto mapf(F f, const T & t, const Ts & ... ts) {
             auto m = minsize(t, ts...);
-            Rt r; 
+            using Vt = decltype(std::forward<F>(f)(*begin(t), *begin(ts)...));
+            using V = typename std::conditional<is_same<Rt,void>::value, vector<Vt>, Rt>::type;
+            V r;
             r.resize(m);
             for(auto i = 0u; i < m; i++) {
                 auto tuples =  make_tuple(*next(begin(t),i), *next(begin(ts),i)...);

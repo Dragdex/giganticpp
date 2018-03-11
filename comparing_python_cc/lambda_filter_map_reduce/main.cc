@@ -14,7 +14,7 @@ int main(int , char **) {
     vector<int> v1 = {  10,  11,  12,  13,  14,  15};  // a vector
     vector<int> v2 = {1000,1100,1200,1300,1400,1500};  // a vector
 
-    auto r1 = mapf([](int x, int y) { return x + y; }, v1, v2);
+    auto r1 = mapf([](int x, int y) -> int { return x + y; }, v1, v2);
     
     for (auto v : r1) {
         cout << v << ", ";
@@ -43,13 +43,13 @@ int main(int , char **) {
         cout << v << ", ";
     }
     cout << endl;
-
+    
     // map std::strings
     string s1("edgard"s);
     string s2("Lima"s);
     string s3("gmail"s);
 
-    auto r4 = mapf<string, string>([](auto x, auto y, auto z) { return min(min(x,y),min(x,z)); }, s1, s2, s3);
+    auto r4 = mapf<string>([](auto x, auto y, auto z) { return min(min(x,y),min(x,z)); }, s1, s2, s3);
 
     cout << r4 << endl;
 
