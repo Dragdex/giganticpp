@@ -119,25 +119,10 @@ C++ variadic funcion templates vs C variadics function
 
 C++ Wins !!!
 
+############################################
 
+Todo:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Use different compilers (GCC, VC++, clang)
+Use different architecutures (i386, x64, arm)
+Add some statistics (repeat the test and collect avg, stddev, ...)
