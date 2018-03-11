@@ -73,7 +73,7 @@ string s1("edgard"s);
 string s2("Lima"s);
 string s3("gmail"s);
 
-auto r4 = mapf<string, string>([](auto x, auto y, auto z) { return min(min(x,y),min(x,z)); }, s1, s2, s3);
+auto r4 = mapf<string>([](auto x, auto y, auto z) { return min(min(x,y),min(x,z)); }, s1, s2, s3);
 
 cout << r4 << endl;
 ```
