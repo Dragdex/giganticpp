@@ -15,17 +15,16 @@ namespace giganticpp {
 
     using namespace std;
 
-    template <typename T>
-        auto minsize(const T & t) {
-            return t.size();
-        }
-
     template <typename T, typename... Ts>
         auto minsize(const T & t, const Ts & ... ts) {
-            auto m = minsize<>(t);
-            auto n = minsize(ts...);
+            if constexpr (sizeof... (ts) == 0) {
+                return t.size();
+            } else {
+                auto m = minsize<>(t);
+                auto n = minsize(ts...);
 
-            return m <= n ? m : n;
+                return m <= n ? m : n;
+            }
         }
 
     template <class Tuple, class F, size_t... Is>
