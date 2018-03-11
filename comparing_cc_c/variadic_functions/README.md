@@ -37,7 +37,7 @@ Now let's try to make C++ life harder by using a value from user input
 First compile de code with:
     
     make clean
-    make DEFS=-DUSE _INPUT all
+    make DEFS=-DUSE_INPUT all
 
 Now the program asks the user to enter a value that will be used in the sum
 
