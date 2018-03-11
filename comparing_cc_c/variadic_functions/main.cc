@@ -3,12 +3,10 @@
 #include <sys/time.h>
 #include <cstdio>
 #include <cstdint>
-//#define LANG "C++"
 #else
 #include <sys/time.h>
 #include <stdint.h>
 #include <stdio.h>
-//#define LANG "C"
 #endif
 
 #include "util.h"
