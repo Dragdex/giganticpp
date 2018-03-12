@@ -26,11 +26,6 @@ int main(int argc, char *argv[])
     }
 #endif
 
-    start.tv_sec = 0;
-    start.tv_usec = 0;
-    end.tv_sec = 0;
-    end.tv_usec = 0;
-
     gettimeofday(&start, NULL);
 
     t = test_variadic();
