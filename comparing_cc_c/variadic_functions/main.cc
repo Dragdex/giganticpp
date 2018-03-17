@@ -3,12 +3,10 @@
 #include <sys/time.h>
 #include <cstdio>
 #include <cstdint>
-//#define LANG "C++"
 #else
 #include <sys/time.h>
 #include <stdint.h>
 #include <stdio.h>
-//#define LANG "C"
 #endif
 
 #include "util.h"
@@ -27,11 +25,6 @@ int main(int argc, char *argv[])
         return -1;
     }
 #endif
-
-    start.tv_sec = 0;
-    start.tv_usec = 0;
-    end.tv_sec = 0;
-    end.tv_usec = 0;
 
     gettimeofday(&start, NULL);
 

@@ -14,8 +14,8 @@ Then execute the code with
 
 Notice the C++ is much faster
     
-    C++ 21200000000 in  0 ms    
-    C 21200000000 in  3193 ms
+    CPP returned 21200000000 in  0 ms    
+    C returned 21200000000 in  3193 ms
 
 Actually C++ cheats and calculates the final result at compilation time.
 
@@ -37,16 +37,16 @@ Now let's try to make C++ life harder by using a value from user input
 First compile de code with:
     
     make clean
-    make DEFS=-DUSE _INPUT all
+    make DEFS=-DUSE_INPUT all
 
 Now the program asks the user to enter a value that will be used in the sum
 
     make
 
     Enter an integer 0
-    C++ 21000000000 in  0 ms
+    CPP returned 21000000000 in  0 ms
     Enter an integer 0
-    C 21000000000 in  3148 ms
+    C returned 21000000000 in  3148 ms
 
 C++ cheats again and does not loop in external 'for', it just multiplies the result by 100000000
 
@@ -124,5 +124,7 @@ C++ Wins !!!
 Todo:
 
 Use different compilers (GCC, VC++, clang)
+
 Use different architecutures (i386, x64, arm)
+
 Add some statistics (repeat the test and collect avg, stddev, ...)
