@@ -129,7 +129,7 @@ Python Wins !!!
 
 2- Performance
 
-C++ is 10x faster than python
+C++ is 10x faster than python, and C++ uses 4x less memory
 
 C++ Wins !!!
 
