@@ -8,8 +8,8 @@ using namespace std;
 
 int main(int , char **) {
     
-    vector<int> v1 = {  10,  11,  12,  13,  14,  15};  // a vector
-    vector<int> v2 = {1000,1100,1200,1300,1400,1500};  // a vector
+    auto v1 = {  10,  11,  12,  13,  14,  15};  // a vector
+    auto v2 = {1000,1100,1200,1300,1400,1500};  // a vector
 
     auto r1 = mapf([](int x, int y) { return x + y; }, v1, v2);
     
