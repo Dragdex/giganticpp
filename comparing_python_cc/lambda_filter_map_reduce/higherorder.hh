@@ -1,5 +1,5 @@
-#ifndef __HIGERORDER__
-#define __HIGERORDER__
+#ifndef HIGERORDER_H_
+#define HIGERORDER_H_
 
 #include <algorithm>
 #include <utility>
@@ -66,4 +66,4 @@ namespace giganticpp {
 }
 
 
-#endif  // #ifndef __HIGERORDER__
+#endif  // #ifndef HIGERORDER_H_
