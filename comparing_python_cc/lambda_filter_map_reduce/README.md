@@ -94,14 +94,59 @@ The source code for this magic is here [higherorder.hh](https://github.com/Dragd
 Of course you can copy/paste it and and use.
 Disclaimer: It has been written for C++17, and may need adjustments for previous versions.
     
+#######################################################################    
+
+Compare both codes side-by-side
+
+![alt text](https://github.com/Dragdex/giganticpp/blob/master/comparing_python_cc/lambda_filter_map_reduce/pics/side_by_side.png) 
+
+#######################################################################
+
+C++ is 10x faster than pyhton
+
+![alt text](https://github.com/Dragdex/giganticpp/blob/master/comparing_python_cc/lambda_filter_map_reduce/pics/perf.png) 
+
+C++ 4x less memory than Python
+
+![alt text](https://github.com/Dragdex/giganticpp/blob/master/comparing_python_cc/lambda_filter_map_reduce/pics/ram.png) 
+
+
 #######################################################################
 
 To Do: implement Filter and Reduction
 
-To Do: copy/paste python code for side-by-side comparison
+#######################################################################
 
-To Do: performance comparison
+Conclusion:
 
-To Do: conclusion
+1- Convenience
+
+C++ sytax is easy and short. But Python systax is shorter and easier to understand
+
+Python "map" comes with the language
+
+Python Wins !!!
+
+2- Performance
+
+C++ is 10x faster than python, and C++ uses 4x less memory
+
+C++ Wins !!!
+
+3- Final result
+
+If you really will never need performance ... are you sure? ... never in life! are you sure? ... then go Python.
+
+Otherwise go C++
+
+The convenience difference was not that huge. C++ map sytax was still very easy. And performance is 10x faster.
+
+C++ Wins !!!
 
 #######################################################################
+
+Disclaimer
+
+Of course this is not a complete and scientific analisys. We are not repeating the experiment, collecting statistics, using benchmarks, covering several coding cases ... Although there mighty be some truth in these results/conclusions.
+
+The idea here is spice up your curiosity on C++ and give a clue how powerful, fun and amazing it can be.
