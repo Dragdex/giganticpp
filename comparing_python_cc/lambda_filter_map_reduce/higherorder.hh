@@ -42,12 +42,6 @@ namespace giganticpp {
                    make_index_sequence<tuple_size<decay_t<Tuple>>::value> {});  
         }
 
-    template<typename R, typename... A>
-        R ret(R(*)(A...));
-
-    template<typename C, typename R, typename... A>
-        R ret(R(C::*)(A...));
-
     template <typename Rt = void, typename F, typename T, typename... Ts>
         auto mapf(F && f, const T & t, const Ts & ... ts) {
             auto m = minsize(t, ts...);
