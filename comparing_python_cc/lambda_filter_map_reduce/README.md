@@ -98,17 +98,17 @@ Disclaimer: It has been written for C++17, and may need adjustments for previous
 
 Compare both codes side-by-side
 
-![alt text](https://github.com/Dragdex/giganticpp/blob/master/comparing_python_cc/lambda_filter_map_reduce/side_by_side.png) 
+![alt text](https://github.com/Dragdex/giganticpp/blob/master/comparing_python_cc/lambda_filter_map_reduce/pics/side_by_side.png) 
 
 #######################################################################
 
 C++ is 10x faster than pyhton
 
-![alt text](https://github.com/Dragdex/giganticpp/blob/master/comparing_python_cc/lambda_filter_map_reduce/perf.png) 
+![alt text](https://github.com/Dragdex/giganticpp/blob/master/comparing_python_cc/lambda_filter_map_reduce/pics/perf.png) 
 
 C++ 4x less memory than Python
 
-![alt text](https://github.com/Dragdex/giganticpp/blob/master/comparing_python_cc/lambda_filter_map_reduce/ram.png) 
+![alt text](https://github.com/Dragdex/giganticpp/blob/master/comparing_python_cc/lambda_filter_map_reduce/pics/ram.png) 
 
 
 #######################################################################
