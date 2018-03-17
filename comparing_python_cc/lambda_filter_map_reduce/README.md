@@ -122,6 +122,7 @@ Conclusion:
 1- Convenience
 
 C++ sytax is easy and short. But Python systax is shorter and easier to understand
+
 Python "map" comes with the language
 
 Python Wins !!!
